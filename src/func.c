@@ -11,7 +11,6 @@
 
 
 book *newBook(char *newtitle, char *newauthor, char *newisbn, int newnob) {
-    book newBook;
     //rückgabe als pointer
     book *bookPtr = malloc(sizeof(book));
     //title

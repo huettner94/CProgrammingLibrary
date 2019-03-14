@@ -1,6 +1,6 @@
 #ifndef PROJECT_FUNC_H
 #define PROJECT_FUNC_H
-#include "../inc/main.h"
+#include "../include/main.h"
 #include <sys/param.h>
 #include <stdbool.h>
 

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../inc/func.h"
-#include "../inc/main.h"
+#include "../include/main.h"
 #endif
 
 lib lib1 = {};

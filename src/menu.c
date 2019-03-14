@@ -185,13 +185,13 @@ void bookMenu(book *help) {
     while (1) {
         int e = isNumber();
         switch (e) {
-            case '1':
+            case 1:
                 rentBook(help);
                 break;
-            case '2':
+            case 2:
                 deleteBook(help);
                 break;
-            case '3':
+            case 3:
                 return;
             default:
                 printf("Eingabe ungültig\n");

@@ -186,11 +186,9 @@ void bookMenu(book *help) {
         switch (e) {
             case 1:
                 rentBook(help);
-                goOn();
                 break;
             case 2:
                 //deleteBook
-                goOn();
                 break;
             case 3:
                 return;

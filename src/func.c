@@ -278,8 +278,8 @@ void rentBook(book *helpPtr) {
 void deleteBook(book *helpPtr){
     lib tmplib = {};
     printf("\nSind Sie sicher, dass sie dieses Buch loeschen wollen? \nJa[1] \nNein[2]");
-    char e = (char) getchar();
-    if(e == '1'){
+    int e = isNumber();
+    if(e == 1){
         for(int i = 0; i<lib1.registered; i++){
             if(lib1.Books[i]->isbn_nr == helpPtr->isbn_nr) continue; //alle bücher außer des zu löschende
             tmplib.Books[i] = lib1.Books[i];                        //werden in eine temporäre bibliothek gespeichert

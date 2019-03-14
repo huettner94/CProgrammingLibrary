@@ -182,8 +182,7 @@ void bookMenu(book *help) {
     printf("\t(2) Buch löschen");
     printf("\t(3) Zurück zum Hauptmenü");
     while (1) {
-        char e = (char) getchar();
-
+        int e = isNumber();
         switch (e) {
             case 1:
                 rentBook(help);

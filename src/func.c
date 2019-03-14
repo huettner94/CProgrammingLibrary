@@ -256,7 +256,7 @@ void rentBook(book *helpPtr) {
     bool b = true; //Hilfsvariable
     printf("\nBuch ausleihen? \nJa[1] \nNein[2]");
     fgets(var, 1, stdin); //Einlesen von antwort
-    if ( var == '1' ) {
+    if ( *var == '1' ) {
         printf("\n Verfügbarkeit wird geprüft.");
         if ( helpPtr->nob > 0 ) {
             printf("\nBuch verfügbar. ");

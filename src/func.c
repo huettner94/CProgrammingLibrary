@@ -54,36 +54,38 @@ void saveBooks() {
 }
 
 void loadBooks() {
+    if (fsize("saves.b") <= 0) {
+        printf("Keine Datei zum Laden einer vorhandenen Bibliothek.\n");
+	return;
+    }
     FILE *ptr;
     ptr = fopen("saves.b","rb");
     size_t length;
-    if ( ptr == NULL || !fsize("saves.b")) {
-        fclose(ptr);
-        printf("Keine Datei zum Laden einer vorhandenen Bibliothek.\n");
-    }else {
-        fseek(ptr, 0, SEEK_SET);
-        fread(&lib1.registered, sizeof(int), 1, ptr);
-        lib1.Books = calloc(lib1.registered, sizeof(book *));
-        for ( int i = 0; i < lib1.registered; i++ ) {
-
-            lib1.Books[ i ] = malloc(sizeof(book));
-            //load number of books
-            fread(&lib1.Books[ i ]->nob, sizeof(int), 1, ptr);
-            //load isbn_nr
-            fread(&length, sizeof(size_t), 1, ptr);
-            lib1.Books[ i ]->isbn_nr = malloc(length);
-            fread(lib1.Books[ i ]->isbn_nr, length, 1, ptr);
-            //load title
-            fread(&length, sizeof(size_t), 1, ptr);
-            lib1.Books[ i ]->title = malloc(length);
-            fread(lib1.Books[ i ]->title, length, 1, ptr);
-            //load author
-            fread(&length, sizeof(size_t), 1, ptr);
-            lib1.Books[ i ]->author = malloc(length);
-            fread(lib1.Books[ i ]->author, length, 1, ptr);
-        }
-        fclose(ptr);
+    if ( ptr == NULL) {
+        printf("Fehler beim oeffnen der Bibliothek.\n");
+	return;
     }
+    fseek(ptr, 0, SEEK_SET);
+    fread(&lib1.registered, sizeof(int), 1, ptr);
+    lib1.Books = calloc(lib1.registered, sizeof(book *));
+    for ( int i = 0; i < lib1.registered; i++ ) {
+        lib1.Books[ i ] = malloc(sizeof(book));
+        //load number of books
+        fread(&lib1.Books[ i ]->nob, sizeof(int), 1, ptr);
+        //load isbn_nr
+        fread(&length, sizeof(size_t), 1, ptr);
+        lib1.Books[ i ]->isbn_nr = malloc(length);
+        fread(lib1.Books[ i ]->isbn_nr, length, 1, ptr);
+        //load title
+        fread(&length, sizeof(size_t), 1, ptr);
+        lib1.Books[ i ]->title = malloc(length);
+        fread(lib1.Books[ i ]->title, length, 1, ptr);
+        //load author
+        fread(&length, sizeof(size_t), 1, ptr);
+        lib1.Books[ i ]->author = malloc(length);
+        fread(lib1.Books[ i ]->author, length, 1, ptr);
+    }
+    fclose(ptr);
 }
 
 void show(lib help) {

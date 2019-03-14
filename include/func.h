@@ -13,6 +13,7 @@ bool validISBN(char *isbn);
 book *newBook(char *newtitle, char *newauthor, char *newisbn, int newnob);
 void saveBooks();
 void loadBooks();
+void deleteBook(book *helpPtr);
 void show(lib help);
 void showByIsbn(lib help);
 void showByTitle(lib help);

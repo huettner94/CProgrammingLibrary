@@ -19,7 +19,7 @@ void showByTitle(lib help);
 void moveBooks(int i);
 void addBookSorted();
 void mainMenu();
-//void rentBook();
+void rentBook(book *help);
 void deleteMenu();
 void searchMenu();
 void showMenu();

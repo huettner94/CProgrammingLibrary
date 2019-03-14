@@ -43,14 +43,11 @@ void showMenu() {
     switch (e) {
         case 1:
             showByTitle(lib1);
-            goOn();
             break;
         case 2:
             showByIsbn(lib1);
-            goOn();
             break;
         case 3:
-            mainMenu();
             break;
         default:
             printf("Falsche Eingabe\n");

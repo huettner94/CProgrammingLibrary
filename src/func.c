@@ -250,13 +250,13 @@ void addBookSorted() {
 
 void rentBook(book *helpPtr) {
     //Buch aufgerufen und angezeigt
-    char *var; //Antwortsvariable
+    char var; //Antwortsvariable
     char name[Max] = {};
     int h = 0; //Hilfsvariable
     bool b = true; //Hilfsvariable
     printf("\nBuch ausleihen? \nJa[1] \nNein[2]");
-    fgets(var, 1, stdin); //Einlesen von antwort
-    if ( *var == '1' ) {
+    fgets(&var, 1, stdin); //Einlesen von antwort
+    if ( var == '1' ) {
         printf("\n Verfügbarkeit wird geprüft.");
         if ( helpPtr->nob > 0 ) {
             printf("\nBuch verfügbar. ");

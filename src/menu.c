@@ -21,7 +21,8 @@ void deleteMenu() {
             //nach titel suchen
             break;
         case 2:
-            //nach isbn filtern
+            //searchByISBN
+            goOn();
             break;
         case 3:
             return;
@@ -184,13 +185,13 @@ void bookMenu(book *help) {
     while (1) {
         int e = isNumber();
         switch (e) {
-            case 1:
+            case '1':
                 rentBook(help);
                 break;
-            case 2:
-                //deleteBook
+            case '2':
+                deleteBook(help);
                 break;
-            case 3:
+            case '3':
                 return;
             default:
                 printf("Eingabe ungültig\n");

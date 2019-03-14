@@ -271,7 +271,6 @@ void rentBook(book *helpPtr) {
                 }
                 h ++;
             }
-            bookMenu(helpPtr); //zurück zum Menü
         }
     }
 }
